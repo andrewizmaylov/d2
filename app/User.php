@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Ocupation')->withTimestamps();
     }
+
+    public function birthday() 
+    {
+        return $this->hasOne('App\Birthday');
+    }
 }

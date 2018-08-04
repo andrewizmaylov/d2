@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\phone;
+use App\birthday;
 use Illuminate\Http\Request;
 
-class PhoneController extends Controller
+class BirthdayController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class PhoneController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -35,42 +35,20 @@ class PhoneController extends Controller
      */
     public function store(Request $request)
     {
-        
-        // dd($request->all());
         $this->validate($request, [
-            'phone' => 'required',
+            'bday' => 'required'
         ]);
-        \Auth::user()->phone()->create($request->all());
-        return redirect()->back();
-
-        // return Phone::create([
-        //     'user_id' => Auth::user()->id,            
-        //     'phone' => $request->phone,
-        // ]);
-    }
-
-    public function addPhone(Request $request)
-    {
-        // dd($request->all());
-
-        $this->validate($request, [
-            'phone' => 'required',
-        ]);
-        \App\Phone::create([
-            'phone' => $request['phone'],
-            'user_id' => $request['user_id']
-        ]);
-     
+        Birthday::create($request->all());
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\phone  $phone
+     * @param  \App\birtday  $birtday
      * @return \Illuminate\Http\Response
      */
-    public function show(phone $phone)
+    public function show(birtday $birtday)
     {
         //
     }
@@ -78,10 +56,10 @@ class PhoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\phone  $phone
+     * @param  \App\birtday  $birtday
      * @return \Illuminate\Http\Response
      */
-    public function edit(phone $phone)
+    public function edit(birtday $birtday)
     {
         //
     }
@@ -90,10 +68,10 @@ class PhoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\phone  $phone
+     * @param  \App\birtday  $birtday
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, phone $phone)
+    public function update(Request $request, birtday $birtday)
     {
         //
     }
@@ -101,10 +79,10 @@ class PhoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\phone  $phone
+     * @param  \App\birtday  $birtday
      * @return \Illuminate\Http\Response
      */
-    public function destroy(phone $phone)
+    public function destroy(birtday $birtday)
     {
         //
     }

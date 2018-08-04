@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Dashboard
+
+@include('calendar')
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,15 +21,7 @@
 
                     <form action="/phone" method="POST">
                         @CSRF
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">{{Auth::user()->phone()->first()->phone ?? null}}</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Ваш номер телефона" name="phone">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Добавить</button>
-                            </div>
-                        </div>
+                        include('partuals.phone_form')
                     </form>
     
                     <form action="/addOcupation" method="POST">
@@ -52,4 +47,10 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
 @endsection
