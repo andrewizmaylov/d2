@@ -21,7 +21,7 @@
 
                     <form action="/phone" method="POST">
                         @CSRF
-                        include('partuals.phone_form')
+                        @include('partuals.phone_form')
                     </form>
     
                     <form action="/addOcupation" method="POST">

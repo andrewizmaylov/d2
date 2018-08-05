@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function phone()
+    public function phones()
     {
         return $this->hasMany('App\Phone');
     }
@@ -40,5 +40,10 @@ class User extends Authenticatable
     public function birthday() 
     {
         return $this->hasOne('App\Birthday');
+    }
+
+    public function groupe()
+    {
+        return $this->belongsTo('App\Groupe');
     }
 }

@@ -24,7 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         $ocupations = \App\Ocupation::all()->sortBy('ocupation');
-        return view('home', compact('ocupations'));
+        $master = \App\Master::getMasterFromDate(time());
+        return view('home', compact('ocupations', 'master'));
     }
 
     public function addOcupation(Request $data)

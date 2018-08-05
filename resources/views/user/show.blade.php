@@ -13,7 +13,7 @@
 	                	{{$user->first_name}} {{$user->last_name}} <br>
 	                	{{$user->email}} <br>
 	                	{{($user->birthday)->bday ?? null}}
-	                	@foreach($user->phone as $phone)
+	                	@foreach($user->phones as $phone)
 							<li>{{$phone->phone}}</li>
 	                	@endforeach
 						<hr>
